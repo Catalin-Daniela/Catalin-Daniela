@@ -458,6 +458,38 @@
       text-wrap: balance;
       hyphens: none;
     }
+    /* Explicit, centered line breaks for the two invitation messages. */
+    .story-line,
+    .wedding-gift-line {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .story-quote,
+    .wedding-gift-message {
+      text-align: center;
+    }
+
+    /* Allow all three gift-message lines to fit on an iPhone without wrapping. */
+    @media (max-width: 639px) {
+      .story-quote {
+        font-size: clamp(13px, 4.55vw, 18.4px);
+        line-height: 1.55;
+      }
+
+      .wedding-gift-message {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100vw - 32px);
+        max-width: none;
+        margin-left: 0;
+        margin-right: 0;
+        font-size: clamp(12.7px, 4vw, 18px);
+        line-height: 1.6;
+        text-wrap: nowrap;
+      }
+    }
   </style>
 </head>
 <body class="selection:bg-gold/20 selection:text-charcoal relative envelope-locked">
@@ -704,8 +736,9 @@
 
         <!-- Text introductiv -->
         <section class="max-w-md mx-auto mb-6 text-center">
-          <p class="font-serif italic text-base sm:text-lg text-mutedgray leading-relaxed font-light">
-            O poveste de dragoste nu se scrie singură, ci alături de oamenii dragi.
+          <p class="story-quote font-serif italic text-base sm:text-lg text-mutedgray leading-relaxed font-light">
+            <span class="story-line">O poveste de dragoste nu se scrie singură,</span>
+            <span class="story-line">ci alături de oamenii dragi.</span>
           </p>
         </section>
 
@@ -744,7 +777,7 @@
           <div class="inline-flex items-center justify-center gap-3.5 sm:gap-6 px-7 sm:px-10 py-3 rounded-full bg-sand/35 border border-gold/40 shadow-sm">
             <span class="numeral-aligned text-xl sm:text-2xl text-charcoal font-medium tracking-wider">19</span>
             <span class="text-gold/60 text-sm select-none leading-none">|</span>
-            <span class="font-numeral text-lg sm:text-xl text-charcoal uppercase tracking-[0.15em] font-medium leading-none">Iunie</span>
+            <span class="font-numeral text-lg sm:text-xl text-charcoal uppercase tracking-[0.15em] font-semibold leading-none">Iunie</span>
             <span class="text-gold/60 text-sm select-none leading-none">|</span>
             <span class="numeral-aligned text-xl sm:text-2xl text-charcoal font-medium tracking-wider">2027</span>
           </div>
@@ -804,10 +837,10 @@
 
         <!-- Mesaj despre daruri, după butonul Google Maps -->
         <section class="max-w-md mx-auto mb-8 text-center">
-          <p class="invitation-centered-paragraph font-serif italic text-base sm:text-lg text-mutedgray leading-relaxed font-light">
-            Prezența voastră este cea mai mare bucurie pentru noi!<br>
-            Însă în loc de flori am aprecia o sticlă de vin<br>
-            sau orice alt prezent oferit cu drag.
+          <p class="invitation-centered-paragraph wedding-gift-message font-serif italic text-base sm:text-lg text-mutedgray leading-relaxed font-light">
+            <span class="wedding-gift-line">Prezența voastră este cea mai mare bucurie pentru noi!</span>
+            <span class="wedding-gift-line">Însă în loc de flori am aprecia o sticlă de vin</span>
+            <span class="wedding-gift-line">sau orice alt prezent oferit cu drag.</span>
           </p>
         </section>
 
