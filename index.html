@@ -625,6 +625,113 @@
         line-height: 1.18;
       }
     }
+  
+    /* MOBILE REFINEMENT — decorations remain at the edges, text stays clear. */
+    @media (max-width: 639px) {
+      #main-invitation {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+
+      #main-invitation article {
+        padding-left: 21px;
+        padding-right: 21px;
+      }
+
+      /* Prevent the floral ornaments from competing with the monogram. */
+      .wedding-ornament--top-flowers {
+        width: 32%;
+        left: -5%;
+        top: 0;
+        opacity: .48;
+      }
+      .wedding-ornament--left-arch {
+        left: -13%;
+        width: 24%;
+        opacity: .23;
+      }
+      .wedding-ornament--right-arch {
+        right: -13%;
+        width: 24%;
+        opacity: .23;
+      }
+
+      /* Keep the statue and the floral border as subtle side accents. */
+      .wedding-ornament--statue {
+        width: 28%;
+        left: -11%;
+        top: 30%;
+        opacity: .38;
+      }
+      .wedding-ornament--right-flowers {
+        width: 26%;
+        right: -10%;
+        opacity: .45;
+      }
+
+      /* Subtle veil rather than an obvious rectangular background. */
+      #main-invitation article > .reading-panel::before {
+        inset: -10px -7px;
+        border-radius: 22px;
+        background: rgba(250,250,246,.76);
+        box-shadow: 0 0 21px 22px rgba(250,250,246,.62);
+        -webkit-backdrop-filter: blur(3px);
+        backdrop-filter: blur(3px);
+      }
+
+      /* Original calligraphic images, slightly inset from the paper borders. */
+      #main-invitation article .couple-lettering-name {
+        width: min(100%, 327px);
+        max-width: 100%;
+        height: auto;
+      }
+      #main-invitation article .ornate-copperplate-monogram {
+        max-width: 100%;
+      }
+
+      #main-invitation article .reading-panel p {
+        color: #25392f;
+        text-align: center;
+      }
+
+      #main-invitation article .closing-message {
+        font-size: clamp(29px, 7.6vw, 39px);
+        line-height: 1.22;
+      }
+
+      #main-invitation article .wedding-gift-message {
+        position: static;
+        left: auto;
+        transform: none;
+        width: 100%;
+        max-width: 100%;
+        margin-inline: auto;
+        font-size: clamp(12px, 3.42vw, 16px);
+      }
+      #main-invitation article .wedding-gift-line {
+        white-space: normal;
+      }
+    }
+
+    /* Extra-narrow screens must never crop the invitation message. */
+    @media (max-width: 375px) {
+      #main-invitation article {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+      #main-invitation article .story-line {
+        white-space: normal;
+      }
+      #main-invitation article .reading-panel .wedding-gift-message {
+        width: 100%;
+        white-space: normal;
+        font-size: 13px;
+      }
+      #main-invitation article .closing-message {
+        font-size: 29px;
+      }
+    }
+
   </style>
 </head>
 <body class="selection:bg-gold/20 selection:text-charcoal relative envelope-locked">
