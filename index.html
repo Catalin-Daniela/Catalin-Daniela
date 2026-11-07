@@ -7,10 +7,7 @@
 
   <!-- Open Graph Meta Tags pentru WhatsApp, iMessage, Facebook și Gmail -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Cătălin &amp; Daniela se căsătoresc! 💍">
-  <meta property="og:description" content="Sâmbătă, 17 Iunie 2027 • Restaurantul Miadora, Chișinău. Vă invităm cu drag să sărbătorim împreună.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:title" content="Invitație la Nuntă">
 
   <!-- Fontul Caligrafic Maratre (CDNFonts) + Google Fonts pentru suport impecabil de diacritice -->
   <link href="https://fonts.cdnfonts.com/css/maratre" rel="stylesheet">
@@ -295,7 +292,7 @@
       right: 5.5%;
       top: 14px;
       bottom: 16px;
-      background: #FCF9F3;
+      background: #FFFFFF;
       border-radius: 0;
       border: 1px solid #29453D;
       box-shadow: 0 4px 16px rgba(35, 28, 20, 0.09);
@@ -488,23 +485,28 @@
       }
     }
   
-    /* Cele trei rânduri ale invitației pe telefon; restul site-ului rămâne intact. */
+    /* Patru rânduri mai mari și mai lizibile, numai pe telefon. */
     @media (max-width: 639px) {
-      .invitation-three-lines {
-        width: calc(100vw - 42px);
-        max-width: calc(100vw - 42px);
-        margin-inline: 50%;
-        transform: translateX(-50%) scaleX(0.87);
-        transform-origin: center center;
-        font-size: clamp(10.695px, 4.55vw, 14.95px);
-        line-height: 1.85;
+      .invitation-four-lines {
+        display: block;
+        position: relative;
+        left: 50%;
+        width: calc(100vw - 16px);
+        max-width: none;
+        margin: 0;
+        transform: translateX(-50%);
+        font-size: clamp(14.5px, 4.45vw, 19.25px);
+        line-height: 1.65;
         text-align: center !important;
         text-wrap: initial;
       }
-      .invitation-three-lines span {
+      .invitation-four-lines span {
         display: block;
         white-space: nowrap;
       }
+    }
+    @media (min-width: 640px) {
+      .invitation-four-lines { display: none !important; }
     }
     /* Prevent an empty timer status from adding unnecessary vertical space. */
     #timerMessage:empty { display: none; }
@@ -778,11 +780,12 @@
             Cu binecuvântarea părinților, vă invităm cu mare drag să sărbătorim împreună
             căsnicia noastră, care va avea loc
           </p>
-          <!-- Versiune mobil: exact trei rânduri, centrate -->
-          <p class="invitation-centered-paragraph invitation-three-lines sm:hidden font-serif italic text-mutedgray font-light">
-            <span>Am ales să ne unim destinele și să împărtășim acest moment special</span>
-            <span>alături de voi. Cu binecuvântarea părinților, vă invităm cu mare drag</span>
-            <span>să sărbătorim împreună căsnicia noastră, care va avea loc</span>
+          <!-- Versiune mobil: exact patru rânduri, centrate și cu text mărit -->
+          <p class="invitation-centered-paragraph invitation-four-lines sm:hidden font-serif italic text-mutedgray font-light">
+            <span>Am ales să ne unim destinele și să împărtășim acest</span>
+            <span>moment special alături de voi. Cu binecuvântarea</span>
+            <span>părinților, vă invităm cu mare drag să sărbătorim</span>
+            <span>împreună căsnicia noastră, care va avea loc</span>
           </p>
         </section>
 
